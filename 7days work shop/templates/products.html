@@ -4,25 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
+
     <nav>
         <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('products') }}">Products</a></li>
-            <li><a href="{{ url_for('cart') }}">Cart</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav>
+    </nav><br><br><br>
 
     <div class="container">
         <h1>Available Products</h1>
         <div class="products-container">
-            <div class="product-box"><img src="{{ url_for('static', filename='images/apples.avif') }}" alt="Apples"><p>Fresh Apples - $5.99</p></div>
-            <div class="product-box"><img src="{{ url_for('static', filename='images/bananas.jpg') }}" alt="Bananas"width="100px"hieght="10px"><p>Organic Bananas - $3.49</p></div>
-            <div class="product-box"><img src="{{ url_for('static', filename='images/carrot.jpg') }}" alt="Carrots" width="150px"hieght="100px"><p>Carrots - $2.99</p></div>
+            <div class="product-box">
+                <img src="../static/images/apples.avif" alt="Apples">
+                <p>Fresh Apples - $5.99</p>
+                <button onclick="addToCart('Fresh Apples', 5.99)">Add to Cart</button>
+            </div>
+            <div class="product-box">
+                <img src="../static/images/bananas.jpg" alt="Bananas">
+                <p>Organic Bananas - $3.49</p>
+                <button onclick="addToCart('Organic Bananas', 3.49)">Add to Cart</button>
+            </div>
+            <div class="product-box">
+                <img src="../static/images/carrot.jpg" alt="Carrots">
+                <p>Carrots - $2.99</p>
+                <button onclick="addToCart('Carrots', 2.99)">Add to Cart</button>
+            </div>
         </div>
     </div>
+
+    <script src="../static/script.js"></script>
 </body>
 </html>

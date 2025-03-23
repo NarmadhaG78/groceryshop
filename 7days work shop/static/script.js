@@ -1,19 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll("nav ul li a");
+let cart = [];
 
-    navLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-            if (this.getAttribute("href").startsWith("#")) {
-                e.preventDefault();
-                let targetId = this.getAttribute("href").substring(1);
-                let targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 50,
-                        behavior: "smooth"
-                    });
-                }
-            }
-        });
+function addToCart(item, price) {
+    cart.push({ item, price });
+    updateCart();
+}
+
+function updateCart() {
+    let cartItems = document.getElementById("cart-items");
+    let totalPrice = 0;
+    cartItems.innerHTML = "";
+    
+    cart.forEach(product => {
+        let li = document.createElement("li");
+        li.textContent = `${product.item} - $${product.price.toFixed(2)}`;
+        cartItems.appendChild(li);
+        totalPrice += product.price;
     });
-});
+
+    document.getElementById("cart-total").textContent = `Total: $${totalPrice.toFixed(2)}`;
+}
+
+function clearCart() {
+    cart = [];
+    updateCart();
+}

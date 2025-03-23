@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
 
     <nav>
         <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('products') }}">Products</a></li>
-            <li><a href="{{ url_for('cart') }}">Cart</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav><br><br>
+    </nav><br><br><br>
 
-    <section class="contact-form">
-        <h2>Contact Us</h2>
-        <form method="post">
-            <input type="text" name="name" placeholder="Your Name" required><br>
-            <input type="email" name="email" placeholder="Your Email" required><br>
-            <textarea name="message" placeholder="Your Message" required></textarea><br>
-            <button type="submit">Send</button>
+    <div class="container">
+        <h1>Contact Us</h1><br>
+        <form>
+            <input type="text" placeholder="Your Name" required><br><br>
+            <input type="email" placeholder="Your Email" required><br><br>
+            <textarea placeholder="Your Message" required></textarea><br><br>
+            <button type="submit">Send Message</button>
         </form>
-    </section>
+    </div>
 
 </body>
 </html>

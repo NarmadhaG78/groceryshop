@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery Store</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Fresh Groceries</title>
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
+
     <nav>
         <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('products') }}">Products</a></li>
-            <li><a href="{{ url_for('cart') }}">Cart</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav>
+    </nav><br><br><br>
 
-    <header class="hero">
+    <div class="hero">
         <h1>Welcome to Fresh Groceries!</h1>
         <p>Your one-stop shop for fresh and organic groceries.</p>
-        <a href="{{ url_for('products') }}" class="shop-btn">Shop Now</a>
-    </header>
+        <a href="products.html" class="shop-btn">Shop Now</a>
+    </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
